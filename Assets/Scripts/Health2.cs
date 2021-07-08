@@ -23,7 +23,7 @@ public class Health2 : MonoBehaviour
     {
         //to do effect (system particuls)
         Destroy(gameObject);
-        Debug.Log("the enemy died");
+        Debug.Log("The Blue player wins");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

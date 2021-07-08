@@ -20,13 +20,14 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+        
         }
     }
     public void Die()
     {
         //to do effect (system particuls)
         Destroy(gameObject);
-        Debug.Log("the enemy died");
+        Debug.Log("the Red Player wins");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
