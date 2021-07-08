@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1433508397910687822}
   - component: {fileID: 5170349409007558291}
   - component: {fileID: 8860391202919281199}
-  - component: {fileID: 6171442145538741142}
+  - component: {fileID: -3904519456411145811}
   m_Layer: 0
   m_Name: BlueBullet
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
---- !u!114 &6171442145538741142
+--- !u!114 &-3904519456411145811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,12 +125,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 255443677481179735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e1ffd99acd7ff141804253174702e61, type: 3}
+  m_Script: {fileID: 11500000, guid: 5914a67d33031544493643fc244c242c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 9.55
+  bulletSpeed: 9
   rb: {fileID: 8860391202919281199}
   damage: 10
+  factorSign: -1
 --- !u!1 &4733448378500361577
 GameObject:
   m_ObjectHideFlags: 0

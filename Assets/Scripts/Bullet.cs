@@ -7,11 +7,12 @@ public class Bullet : MonoBehaviour
    public float bulletSpeed = 20f;
    public Rigidbody rb;
    public int damage = 10;
+   public int factorSign; 
 
     void Start()
     {
       
-        rb.velocity = - transform.right * bulletSpeed ;
+        rb.velocity =  transform.right * factorSign * bulletSpeed ;
     }
 
     void OnTriggerEnter(Collider other) {

@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
-    public BlueHealthBar healthBar;
+    public HealthBar healthBar;
+    public GameOver gameOver;
     public int health = 100;
     public int currentHealth = 100 ;
+    public string message; 
   
    public  void TakeDamage(int damage)
     {
@@ -16,8 +18,7 @@ public class Health : MonoBehaviour
         currentHealth -= damage ; 
         Debug.Log(currentHealth);
         healthBar.SetHealth(currentHealth);
-        Debug.Log("BLUE : " + currentHealth);
-        if (currentHealth <= 0)
+          if (currentHealth <= 0)
         {
             Die();
         
@@ -26,8 +27,18 @@ public class Health : MonoBehaviour
     public void Die()
     {
         //to do effect (system particuls)
+        if(gameObject.name == "BluePlayer")
+        {
+            Debug.Log("the Red Player wins");
+            message = "the Red Player wins!!";
+        }else if (gameObject.name == "RedPlayer")
+        {
+            Debug.Log("the Blue Player wins");
+            message= "The Blue Player wins!!";
+        }
         Destroy(gameObject);
-        Debug.Log("the Red Player wins");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        gameOver.SetUpResult(message);
+        
     }
 }

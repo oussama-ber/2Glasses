@@ -41,11 +41,8 @@
      <Compile Include="Assets\Scripts\Spinner.cs" />
      <Compile Include="Assets\Scripts\Player1Movement.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
-     <Compile Include="Assets\Scripts\Health2.cs" />
-     <Compile Include="Assets\Scripts\Bullet2.cs" />
-     <Compile Include="Assets\Scripts\Weapon2.cs" />
-     <Compile Include="Assets\Scripts\BlueHealthBar.cs" />
-     <Compile Include="Assets\Scripts\RedHealthBar.cs" />
+     <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/programs/unity/2020.3.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
