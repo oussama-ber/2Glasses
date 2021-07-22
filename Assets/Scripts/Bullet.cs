@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        Health enemy = other.GetComponent<Health>();
+        ZombieHealth enemy = other.GetComponent<ZombieHealth>();
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
