@@ -8,6 +8,11 @@ TagManager:
   - BluePlayer
   - RedPlayer
   - Zombie
+  - obstacles
+  - RightWall
+  - LeftWall
+  - TopWall
+  - BottomWall
   layers:
   - Default
   - TransparentFX
