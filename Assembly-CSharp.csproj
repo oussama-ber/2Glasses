@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\CubeSpawner.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\MovementAI.cs" />
+     <Compile Include="Assets\Scripts\MoveUsingRaycast.cs" />
      <Compile Include="Assets\Scripts\Cube.cs" />
      <Compile Include="Assets\Scripts\Spinner.cs" />
      <Compile Include="Assets\Scripts\Player1Movement.cs" />
@@ -55,7 +56,7 @@
      <Compile Include="Assets\Scripts\MouseRotate.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\ObjectPooler.cs" />
-     <Compile Include="Assets\Scripts\MoveUsingRaycast.cs" />
+     <Compile Include="Assets\MoveAlong.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/programs/unity/2020.3.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
