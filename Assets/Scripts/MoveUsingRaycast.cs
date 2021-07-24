@@ -9,14 +9,14 @@ public class MoveUsingRaycast : MonoBehaviour
 
     [SerializeField] float range = 300f;
     [SerializeField] float speed = 5f;
-    [SerializeField] float SpeedAlong = 3.5f;
+   // [SerializeField] float SpeedAlong = 3.5f;
 
     Vector3 zeroVector = new Vector3(0, 0, 0);
 
     Vector3 playerPosition = new Vector3(0, 0, 0);
     public GameObject playerLight;  
     public GameObject player;
-    public GameObject currentHit;
+ 
   
 
 
@@ -24,12 +24,6 @@ public class MoveUsingRaycast : MonoBehaviour
     {
 
         moveAlongScript = GetComponent<MoveAlong>();
-        // playerLight = GetComponent<Light>(); 
-       
-       
-        
-        //  moveAlongScript.enabled = false ; 
-        // notBack =true;
     }
     void FixedUpdate()
     {
@@ -42,7 +36,6 @@ public class MoveUsingRaycast : MonoBehaviour
 
     private void TestRaycast()
     {
-
         Vector3 directionForward = transform.forward;
         Vector3 directionBack = -transform.forward;
         Vector3 directionRight = transform.right;
@@ -77,7 +70,7 @@ public class MoveUsingRaycast : MonoBehaviour
             {
                 // Debug.Log("moving forward");
                 playerPosition = hitForward.transform.position;
-                currentHit = hitForward.transform.gameObject ; 
+                
             }
         }
         if (backBool)
@@ -135,6 +128,7 @@ public class MoveUsingRaycast : MonoBehaviour
 
 
     }
+    
 
 
 

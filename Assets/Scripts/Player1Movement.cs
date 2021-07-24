@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Player1Movement : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] float moveSpeed = 10f;
-    [SerializeField] private float rotationSpeed = 20f;
+    // [SerializeField] float moveSpeed = 10f;
+   // [SerializeField] private float rotationSpeed = 20f;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float movementForce = 10f;
     public GameOver gameOver;
