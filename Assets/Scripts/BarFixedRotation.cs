@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BarFixedRotation : MonoBehaviour
 {
-  
+
     void Update()
     {
-        transform.LookAt(transform.position + Camera.main.transform.rotation *- Vector3.back,
-            Camera.main.transform.rotation *- Vector3.down);
+        transform
+        .LookAt(
+            transform.position + Camera.main.transform.rotation * -Vector3.back,
+            Camera.main.transform.rotation * -Vector3.down
+               );
     }
 }

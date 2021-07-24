@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3659771}
   m_Layer: 0
   m_Name: wall
-  m_TagString: BottomWall
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -265,7 +265,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15386734}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15386734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81, y: 2, z: 80}
+  m_LocalPosition: {x: 36, y: 2, z: -18}
   m_LocalScale: {x: 3.6008759, y: 3.6008759, z: 3.6008759}
   m_Children: []
   m_Father: {fileID: 0}
@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rb: {fileID: 15386741}
+  noCollision: 1
 --- !u!54 &15386741
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -358,10 +359,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &80937347
 GameObject:
@@ -767,7 +768,7 @@ GameObject:
   - component: {fileID: 959473215}
   m_Layer: 0
   m_Name: wall (1)
-  m_TagString: TopWall
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1030,7 +1031,7 @@ GameObject:
   - component: {fileID: 1174450994}
   m_Layer: 0
   m_Name: wall (2)
-  m_TagString: LeftWall
+  m_TagString: TopWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1986,7 +1987,7 @@ GameObject:
   - component: {fileID: 1878009134}
   m_Layer: 0
   m_Name: wall (3)
-  m_TagString: RightWall
+  m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
