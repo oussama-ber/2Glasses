@@ -637,6 +637,8 @@ MonoBehaviour:
   result: {fileID: 3930219051633312249}
   replaybutton: {fileID: 7397674844787544884}
   quitButton: {fileID: 2535119896056376727}
+  gameManager: {fileID: 0}
+  mainMenu: {fileID: 0}
 --- !u!1 &6260340487445203548
 GameObject:
   m_ObjectHideFlags: 0
