@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 50f;
     public Rigidbody rb;
     public int damage = 10;
     public int factorSign;
@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
 
         rb.velocity = transform.right * factorSign * bulletSpeed;
+        Invoke("DistroyBullet", 3 );
     }
 
     void OnTriggerEnter(Collider other)
@@ -21,9 +22,14 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            DistroyBullet();
         }
-        Destroy(gameObject);
+       
 
+    }
+    void DistroyBullet()
+    {
+        Destroy(gameObject);
     }
 
 
