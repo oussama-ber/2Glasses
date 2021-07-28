@@ -62,7 +62,7 @@ public class MoveUsingSpherecast : MonoBehaviour
             playerPosition = Vector3.zero;
             GetComponent<MoveAlong>().enabled = true;
             playerLight.GetComponent<Light>().color = Color.white;
-
+            
 
         }
     }
