@@ -17,31 +17,26 @@ public class EnemyShooting : MonoBehaviour
     public int ammo = 7;
     public float speed = 10f;
     public GameObject reloadStation;
+    public bool enemyTankIsLoaded;
 
     private void Start()
     {
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
+        enemyTankIsLoaded = true;
     }
     void Update()
     {
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
         Debug.DrawRay(origin, directionForward * 50f, Color.red);
-
-
-        // if (Input.GetKeyDown(KeyCode.B))
-        // {
-
-        //     Test();
-        // }
         Search();
 
 
     }
     public bool Search()
     {
-        
+
         //get position and direction of the gun.
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
@@ -93,15 +88,16 @@ public class EnemyShooting : MonoBehaviour
         }
         else
         {
+            enemyTankIsLoaded = false;
             GetComponent<EnemyReloading>().enabled = true;
         }
 
     }
     void Test()
     {
-        
-            GetComponent<EnemyReloading>().enabled = true;
-        
+
+        GetComponent<EnemyReloading>().enabled = true;
+
     }
     // void GoReload()
     // {

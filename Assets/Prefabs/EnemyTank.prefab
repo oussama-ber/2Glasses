@@ -5954,9 +5954,9 @@ GameObject:
   - component: {fileID: 8177317476432429502}
   - component: {fileID: 8177317476432429497}
   - component: {fileID: 8177317476432429496}
-  - component: {fileID: 8177317476432429499}
   - component: {fileID: 8177317476432429493}
   - component: {fileID: 8177317476432429492}
+  - component: {fileID: 1565681240}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: Enemy
@@ -6003,7 +6003,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 6.55
@@ -6025,7 +6025,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa3f6ee224fae3c4f83ba46625a28e0a, type: 3}
   m_Name: 
@@ -6042,7 +6042,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88842a34a32f624498b62d1a06fed7e3, type: 3}
   m_Name: 
@@ -6057,7 +6057,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab3210764fa8f84493571610b6bd228, type: 3}
   m_Name: 
@@ -6069,24 +6069,10 @@ MonoBehaviour:
   fireCountdown: 0
   shootEffect: {fileID: 8177317476690729635}
   targetEffect: {fileID: 8177317475764986418}
-  ammo: 10
+  ammo: 1
   speed: 10
   reloadStation: {fileID: 0}
---- !u!114 &8177317476432429499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341eed7566f9a2846865750a289ea60d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reloadStation: {fileID: 0}
-  speed: 20
-  reloadingParticules: {fileID: 8338985414675580050}
+  enemyTankIsLoaded: 0
 --- !u!114 &8177317476432429493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6094,7 +6080,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80c74e712a57614498f53f79201eb56, type: 3}
   m_Name: 
@@ -6122,6 +6108,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1565681240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177317476432429501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbe8b0477581254896549487edec415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadSpawner: {fileID: 0}
+  reloadStation: {fileID: 0}
+  directionPlayer: {x: 0, y: 0, z: 0}
+  rotationSpeed: 2
+  emenyRange: 200
+  movementSpeed: 10
+  reloadingParticules: {fileID: 8338985414675580050}
+  isLoaded: 0
 --- !u!1 &8177317476619559526
 GameObject:
   m_ObjectHideFlags: 0
