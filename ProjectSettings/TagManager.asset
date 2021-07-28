@@ -13,6 +13,9 @@ TagManager:
   - LeftWall
   - TopWall
   - BottomWall
+  - Tank
+  - Enemy
+  - ReloadStation
   layers:
   - Default
   - TransparentFX

@@ -105,6 +105,7 @@ public class MoveUsingRaycast : MonoBehaviour
         if (transform.position == playerPosition)
         {
             playerPosition = zeroVector;
+            Debug.Log("enabling the moveScript");
             moveAlongScript.enabled = true;
 
             // rechange the player's color if not any more detected. (the fake zombie detect him and reach his stored place)
