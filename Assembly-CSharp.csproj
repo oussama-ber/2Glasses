@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Zombie\MoveAlong.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\Scripts\EnemyTank\EnemyReloading.cs" />
+     <Compile Include="Assets\Scripts\EnemyTankEasy.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Scripts\UIs\BarFixedRotation.cs" />
@@ -57,12 +58,14 @@
      <Compile Include="Assets\Scripts\Management\GameManager.cs" />
      <Compile Include="Assets\Scripts\EnemyTank\EnemySphereCast.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+     <Compile Include="Assets\RotateCamera.cs" />
      <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletBounce.cs" />
      <Compile Include="Assets\Scripts\Management\PlayerManager.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scripts\Zombie\MoveTransformPositionWithInputSmoothlyAndRotation.cs" />
      <Compile Include="Assets\Scripts\Coin\Coin.cs" />
+     <Compile Include="Assets\EnterMenu.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
      <Compile Include="Assets\Scripts\UIs\MainMenu.cs" />
@@ -111,7 +114,7 @@
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Scripts\BluePlayer\Health.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\Scripts\EnemyTankEasy.cs" />
+     <Compile Include="Assets\FinalUIMenu.cs" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

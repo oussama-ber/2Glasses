@@ -6,6 +6,7 @@ public class GunRotation : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public float _rotationSpeed = 3f; 
+    [SerializeField] public float  _turnSpeed = 0.9f;
     void Start()
     {
         
@@ -20,10 +21,12 @@ public class GunRotation : MonoBehaviour
 
     private void RotationProcess()
     {
-        if (Input.GetKey(KeyCode.A))
-            RotateRight(_rotationSpeed);
-        if (Input.GetKey(KeyCode.E))
-            RotateLeft(_rotationSpeed);
+        // if (Input.GetKey(KeyCode.A))
+        //     RotateRight(_rotationSpeed);
+        // if (Input.GetKey(KeyCode.E))
+        //     RotateLeft(_rotationSpeed);
+        float horizontal = Input.GetAxis("Mouse X");
+        transform.Rotate(horizontal * _turnSpeed * Vector3.up, Space.World);
     }
     public void RotateRight(float rotationSpeed)
     {

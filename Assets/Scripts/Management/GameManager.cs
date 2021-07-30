@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
         //     mainMenu.SetActivated(true);
     }
 
-    public void Replay()
-    {
-        Debug.Log("replayed the ui should be invisible");
-        mainMenu.SetActivated(false);
-    }
+    // public void Replay()
+    // {
+    //     Debug.Log("replayed the ui should be invisible");
+    //     mainMenu.SetActivated(false);
+    // }
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape))

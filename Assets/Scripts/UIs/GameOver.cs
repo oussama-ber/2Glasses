@@ -15,16 +15,20 @@ public class GameOver : MonoBehaviour
     public void SetUpResult(string message)
     {
         gameObject.SetActive(true);
+        GetComponent<GameOver>().enabled = true;
         result.text = message;
     }
 
     public void ReplayGame()
     {
-        mainMenu.SetActivated(false);
-        gameManager.mainMenuShouldLoaded = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        mainMenu.SetActivated(false);
-        gameManager.mainMenuShouldLoaded = false;
+        // mainMenu.SetActivated(false);
+        // gameManager.mainMenuShouldLoaded = false;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("the replayer button clicked ");
+        SceneManager.LoadScene(1);
+        // mainMenu.SetActivated(false);
+        // gameManager.mainMenuShouldLoaded = false;
+        
 
         gameObject.SetActive(false);
         Debug.Log("replay the game");
