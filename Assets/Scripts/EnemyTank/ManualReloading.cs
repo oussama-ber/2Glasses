@@ -17,12 +17,14 @@ public class ManualReloading : MonoBehaviour
     public EnemyTankEasy enemyTankLevel;
     public int ammoToReload;
     Quaternion rotation;
+    Rigidbody rb; 
 
     void Start()
     {
         isLoaded = GetEnemyTankIsLoaded();
          isLoaded = false;
          ammoToReload= enemyTankLevel.ammo;
+         rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
     {
@@ -43,7 +45,9 @@ public class ManualReloading : MonoBehaviour
     }
     void Move()
     {
-        transform.position += movementSpeed * Time.deltaTime * transform.forward;
+        // transform.position += movementSpeed * Time.deltaTime * transform.forward;
+        rb.velocity = transform.forward * movementSpeed;
+        
 
     }
 
@@ -75,7 +79,7 @@ public class ManualReloading : MonoBehaviour
 
         if (rightForwardBool)
         {
-            if (hitRightForward.transform.gameObject.tag == "MiddleObstacles")
+            if (hitRightForward.transform.gameObject.tag == "obstacles")
             {
                 raycastOffset -= Vector3.right;
             }
@@ -83,13 +87,16 @@ public class ManualReloading : MonoBehaviour
         else
         if (leftForwardBool)
         {
-            if (hitLeftForward.transform.gameObject.tag == "MiddleObstacles")
+            if (hitLeftForward.transform.gameObject.tag == "obstacles")
             {
                 raycastOffset += Vector3.right;
             }
         }
         if (raycastOffset != Vector3.zero)
+        {
+            Debug.Log("rotating");
             transform.Rotate(raycastOffset * Time.deltaTime * 5f);
+        }
         else
         {
             if (reloadStation != null)
@@ -114,7 +121,7 @@ public class ManualReloading : MonoBehaviour
             Debug.Log("reloding seccess !!! we should increase the ammo");
             GetComponent<EnemyMovement>().enabled = true;
             GetComponent<EnemyShooting>().enabled = true;
-            GetComponent<EnemyMoveAlong>().enabled = true;
+            GetComponent<ManualMoveAlong>().enabled = true;
             GetComponent<ManualReloading>().enabled = false;
         }
     }

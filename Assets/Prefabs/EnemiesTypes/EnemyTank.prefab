@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &674911352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674911354}
+  - component: {fileID: 674911353}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674911354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674911352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8177317476432429503}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &674911353
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674911352}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3.09
+  m_Range: 13.22
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &8177317474716649738
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +888,6 @@ GameObject:
   - component: {fileID: 8177317475579447397}
   - component: {fileID: 8177317475579447402}
   - component: {fileID: 8177317475579447403}
-  - component: {fileID: 8177317475579447396}
   - component: {fileID: 8177317475579447399}
   m_Layer: 0
   m_Name: EnemyGun
@@ -885,19 +977,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8177317475579447396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177317475579447401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46f82c2a9a454984b82d63c21e47ad79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 100
 --- !u!114 &8177317475579447399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5956,6 +6035,7 @@ GameObject:
   - component: {fileID: 8177317476432429496}
   - component: {fileID: 8177317476432429493}
   - component: {fileID: 1565681240}
+  - component: {fileID: 1382415023}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: Enemy
@@ -5979,6 +6059,7 @@ Transform:
   - {fileID: 8177317474947467094}
   - {fileID: 8177317475764986572}
   - {fileID: 8175506101997312836}
+  - {fileID: 674911354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6023,12 +6104,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3f6ee224fae3c4f83ba46625a28e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAlongScript: {fileID: 8177317476432429493}
-  emenyRange: 300
-  speed: 5
+  moveAlongScript: {fileID: 0}
   playerLight: {fileID: 0}
-  player: {fileID: 0}
-  enemyLevel: {fileID: 11400000, guid: 248ae9d55c87eea4c93f7f4ff65ab1d2, type: 2}
+  enemyLight: {fileID: 674911352}
+  emenyRange: 300
+  speed: 20
+  speedTest: 0.2
+  enemyLevel: {fileID: 11400000, guid: 9818a22b1f2f9f148a76f5e248ef1254, type: 2}
+  floatToAdd: 0
+  rotationSpeed: 3
 --- !u!114 &8177317476432429497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,7 +6140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab3210764fa8f84493571610b6bd228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: {fileID: 11400000, guid: 248ae9d55c87eea4c93f7f4ff65ab1d2, type: 2}
+  enemyLevel: {fileID: 11400000, guid: 9818a22b1f2f9f148a76f5e248ef1254, type: 2}
   tankGun: {fileID: 8177317475579447401}
   damage: 5
   range: 50
@@ -6074,7 +6158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80c74e712a57614498f53f79201eb56, type: 3}
   m_Name: 
@@ -6086,7 +6170,7 @@ MonoBehaviour:
   - -90
   - 180
   isNotColliding: 1
-  enemyLevel: {fileID: 11400000, guid: 248ae9d55c87eea4c93f7f4ff65ab1d2, type: 2}
+  enemyLevel: {fileID: 11400000, guid: 9818a22b1f2f9f148a76f5e248ef1254, type: 2}
 --- !u!114 &1565681240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6094,7 +6178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dbe8b0477581254896549487edec415, type: 3}
   m_Name: 
@@ -6104,11 +6188,27 @@ MonoBehaviour:
   directionPlayer: {x: 0, y: 0, z: 0}
   rotationSpeed: 2
   emenyRange: 200
-  movementSpeed: 10
+  movementSpeed: 25
   reloadingParticules: {fileID: 8338985414675580050}
-  isLoaded: 0
-  enemyTankLevel: {fileID: 11400000, guid: 248ae9d55c87eea4c93f7f4ff65ab1d2, type: 2}
+  isLoaded: 1
+  enemyTankLevel: {fileID: 11400000, guid: 9818a22b1f2f9f148a76f5e248ef1254, type: 2}
   ammoToReload: 0
+--- !u!114 &1382415023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177317476432429501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c3d08b0f19ba84eae853c26929d293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emenyRange: 200
+  movementSpeed: 12
+  floatToAdd: 0
+  rotationSpeed: 6.84
 --- !u!1 &8177317476619559526
 GameObject:
   m_ObjectHideFlags: 0

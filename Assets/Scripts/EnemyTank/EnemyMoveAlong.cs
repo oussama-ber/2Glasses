@@ -28,22 +28,27 @@ public class EnemyMoveAlong : MonoBehaviour
     {
         if (isNotColliding)
         {
-            // rb.velocity = (movementSpeed * transform.forward);
-             transform.position += movementSpeed * Time.deltaTime * transform.forward;
+             rb.velocity = (movementSpeed * transform.forward);
+            //  transform.position += movementSpeed * Time.deltaTime * transform.forward;
         }
-    }
-    private void OnCollisionEnter(Collision coll)
-    {
-        if (coll.gameObject.tag != "Ground")
+        else 
         {
-        Debug.Log("we collide with" + coll.gameObject.name);
-        isNotColliding = false;
-        Debug.Log("change angle");
-        transform.Rotate(0, RandomAngle(), 0);
-        isNotColliding=true;
-
+            rb.velocity = new Vector3 (0,0,0);
         }
     }
+    
+    // private void OnCollisionEnter(Collision coll)
+    // {
+    //     if (coll.gameObject.tag != "Ground")
+    //     {
+    //     Debug.Log("we collide with" + coll.gameObject.name);
+    //     isNotColliding = false;
+    //     Debug.Log("change angle");
+    //     transform.Rotate(0, RandomAngle(), 0);
+    //     isNotColliding=true;
+
+    //     }
+    // }
     private float RandomAngle()
     {
         int randomIndex = Random.Range(1, 3);

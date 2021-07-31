@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\EnemyTank\EnemyRunRotation.cs" />
      <Compile Include="Assets\Scripts\UIs\StaminaBar.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+     <Compile Include="Assets\FinalUIMenu.cs" />
      <Compile Include="Assets\Scripts\UIs\Score.cs" />
      <Compile Include="Assets\Scripts\EnemyTank\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Zombie\ZombieSpawner.cs" />
@@ -114,7 +115,7 @@
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Scripts\BluePlayer\Health.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\FinalUIMenu.cs" />
+     <Compile Include="Assets\ManualMoveAlong.cs" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

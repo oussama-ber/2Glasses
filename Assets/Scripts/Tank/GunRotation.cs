@@ -5,11 +5,12 @@ using UnityEngine;
 public class GunRotation : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public float _rotationSpeed = 3f; 
-    [SerializeField] public float  _turnSpeed = 0.9f;
+    [SerializeField] public float _rotationSpeed = 3f;
+    [SerializeField] public float _turnSpeed = 0.9f;
+  
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,13 +29,21 @@ public class GunRotation : MonoBehaviour
         float horizontal = Input.GetAxis("Mouse X");
         transform.Rotate(horizontal * _turnSpeed * Vector3.up, Space.World);
     }
-    public void RotateRight(float rotationSpeed)
+    public void RotateRight(float rotationSpeed, float floatToAdd)
     {
-         transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.down);
+        Quaternion currentRotation = transform.rotation;
+        floatToAdd += 1f;
+        Quaternion wantedRotation = Quaternion.Euler(0, floatToAdd, 0);
+        transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed);
+        // transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.down);
         // Quaternion aa =   transform.rotation ; 
     }
-    public void RotateLeft(float rotationSpeed)
+    public void RotateLeft(float rotationSpeed, float floatToAdd)
     {
-        transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.up);
+        Quaternion currentRotation = transform.rotation;
+        floatToAdd -= 1f;
+        Quaternion wantedRotation = Quaternion.Euler(0, floatToAdd, 0);
+        transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed);
+        // transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.up);
     }
 }

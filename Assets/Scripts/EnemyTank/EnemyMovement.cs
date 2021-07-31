@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public EnemyMoveAlong moveAlongScript;
+    public ManualMoveAlong moveAlongScript;
+    public GameObject playerLight;
+    public GameObject enemyLight;
 
     [SerializeField] float emenyRange = 300f;
     // [SerializeField] float rotationSpeed = 100f;
 
     public float speed;
+    public float speedTest = 30;
     // [SerializeField] float SpeedAlong = 3.5f;
 
     Vector3 zeroVector = new Vector3(0, 0, 0);
 
     Vector3 playerPosition = new Vector3(0, 0, 0);
-    
- 
+
+
     public EnemyTankEasy enemyLevel;
+    public float floatToAdd;
+    public float rotationSpeed = 10f;
+    Vector3 directionPlayer;
+    Quaternion rotation;
+    // float playerDistance = new Vector3(0, 0, 0);
 
 
-
+    Rigidbody rb;
 
     void Start()
     {
-
-        moveAlongScript = GetComponent<EnemyMoveAlong>();
+        enemyLight.GetComponent<Light>();
+        rb = GetComponent<Rigidbody>();
+        moveAlongScript = GetComponent<ManualMoveAlong>();
         speed = enemyLevel.speed;
     }
     void FixedUpdate()
@@ -34,17 +43,17 @@ public class EnemyMovement : MonoBehaviour
     }
     private void MoveToPlayer()
     {
-        TestRaycast();
+        DetectingTankWithRaycast();
     }
 
-    private void TestRaycast()
+    private void DetectingTankWithRaycast()
     {
         Vector3 directionForward = transform.forward;
         Vector3 directionBack = -transform.forward;
         Vector3 directionRight = transform.right;
         Vector3 directionLeft = -transform.right;
         Vector3 origin = transform.position;
-        Debug.DrawRay(origin, directionForward * 200f, Color.red);
+        Debug.DrawRay(origin, directionForward * 200f, Color.cyan);
         Debug.DrawRay(origin, directionBack * 200f, Color.red);
         Debug.DrawRay(origin, directionRight * 200f, Color.red);
         Debug.DrawRay(origin, directionLeft * 200f, Color.red);
@@ -71,9 +80,10 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hitForward.transform.name == "Tank")
             {
-                // Debug.Log("moving forward");
+                directionPlayer = hitForward.transform.position - transform.position;
+                rotation = Quaternion.LookRotation(directionPlayer);
                 playerPosition = hitForward.transform.position;
-                if (hitForward.distance <= 10f)
+                if (hitForward.distance <= 15f)
                 {
                     shouldStop = true;
                 }
@@ -83,10 +93,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hitBack.transform.name == "Tank")
             {
-                // Debug.Log("back");
+                Debug.Log("back");
+                directionPlayer = hitBack.transform.position - transform.position;
+                rotation = Quaternion.LookRotation(directionPlayer);
                 playerPosition = hitBack.transform.position;
-                transform.Rotate(0, 180f, 0);
-                if (hitBack.distance <= 10f)
+                if (hitBack.distance <= 15f)
                 {
                     shouldStop = true;
                 }
@@ -96,10 +107,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hitRight.transform.name == "Tank")
             {
-                // Debug.Log("hitRight");
+                Debug.Log("hitRight");
+                directionPlayer = hitRight.transform.position - transform.position;
+                rotation = Quaternion.LookRotation(directionPlayer);
                 playerPosition = hitRight.transform.position;
-                transform.Rotate(0, 90f, 0);
-                if (hitRight.distance <= 10f)
+                if (hitRight.distance <= 15f)
                 {
                     shouldStop = true;
                 }
@@ -109,10 +121,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (hitLeft.transform.name == "Tank")
             {
-                // Debug.Log("hitLeft");
+                Debug.Log("hitLeft");
+                directionPlayer = hitLeft.transform.position - transform.position;
+                rotation = Quaternion.LookRotation(directionPlayer);
                 playerPosition = hitLeft.transform.position;
-                transform.Rotate(0, -90f, 0);
-                if (hitLeft.distance < 10f)
+                if (hitLeft.distance <= 15f)
                 {
                     shouldStop = true;
                 }
@@ -120,41 +133,62 @@ public class EnemyMovement : MonoBehaviour
         }
 
         //End Player detection---------------------------------------------------------------------------------------------
-        if(shouldStop)
+        if (shouldStop)
         {
-            playerPosition = zeroVector;
-            GetComponent<EnemyMoveAlong>().enabled = false;
-            Debug.Log("shouldnotmoveeeee");
+            // playerPosition = zeroVector;
+            rb.velocity = Vector3.zero;
+            playerPosition = Vector3.zero;
+            GetComponent<ManualMoveAlong>().enabled = false;
+            Debug.Log("should not moveeeee");
         }
-        if (transform.position == playerPosition)
+        if (transform.position == playerPosition) // not working
         {
+            Debug.Log("should Stop");
             playerPosition = zeroVector;
+
             if (!moveAlongScript.enabled)
-                GetComponent<EnemyMoveAlong>().enabled = true;
+                GetComponent<ManualMoveAlong>().enabled = true;
 
             // rechange the player's color if not any more detected. (the fake zombie detect him and reach his stored place)
-            // if (playerLight != null)
-            //     playerLight.GetComponent<Light>().color = Color.white;
+
+            playerLight.GetComponent<Light>().color = Color.white;
+            enemyLight.GetComponent<Light>().color = Color.white;
         }
-        if ((playerPosition != zeroVector))
+        // Debug.Log("player position : " + playerPosition);
+        // Debug.Log("tank position : " + transform.position);
+        if (playerPosition == transform.position)
         {
+            Debug.Log("bingooooooooooooooooooooooooooooooooooooooooooooooooo");
+
+        }
+
+        if ((playerPosition != zeroVector)) // works
+        {
+            Debug.Log("doingSomething");
+
             if (moveAlongScript.enabled)
-                GetComponent<EnemyMoveAlong>().enabled = false;
+            {
+                GetComponent<ManualMoveAlong>().enabled = false;
+            }
+
+            Rotate(rotation);
+            // Moveforward();
+            Invoke("Moveforward", 1f);
             //change player's color if detected
-            // if (playerLight != null)
-            //     playerLight.GetComponent<Light>().color = Color.red;
-
-
-            transform.position = Vector3.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
+            playerLight.GetComponent<Light>().color = Color.red;
+            enemyLight.GetComponent<Light>().color = Color.red;
         }
-        else
-        {
-            // Debug.Log("make the moveAlongScript enable ");
-            if (!moveAlongScript.enabled)
-                moveAlongScript.enabled = true;
-
-        }
-
-
+    }
+    void Rotate(Quaternion rotation)
+    {
+        Debug.Log("rotating from method");
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+    }
+    void Moveforward()
+    {
+        Debug.Log("moving from method");
+        // rb.velocity = transform.forward * speedTest;
+        transform.position = Vector3.Lerp(transform.position, playerPosition, Time.deltaTime * speedTest);
+        
     }
 }

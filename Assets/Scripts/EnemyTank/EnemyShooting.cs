@@ -47,16 +47,12 @@ public class EnemyShooting : MonoBehaviour
         //get position and direction of the gun.
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
-
         Ray rayForward = new Ray(origin, directionForward);
         RaycastHit hit;
         if (Physics.Raycast(rayForward, out hit, range))
         {
             // Debug.Log(hit.transform.name);
             Vector3 effectPosition = hit.point;
-
-
-
             if (hit.transform.tag == "Tank")
             {
                 TankHealth player = hit.transform.gameObject.GetComponent<TankHealth>();
@@ -98,7 +94,7 @@ public class EnemyShooting : MonoBehaviour
             enemyTankIsLoaded = false;
             GetComponent<ManualReloading>().enabled = true;
             GetComponent<EnemyShooting>().enabled = false;
-            GetComponent<EnemyMoveAlong>().enabled = false;
+            GetComponent<ManualMoveAlong>().enabled = false;
             GetComponent<EnemyMovement>().enabled = false;
         }
 

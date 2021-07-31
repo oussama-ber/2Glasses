@@ -9,7 +9,7 @@ public class TankShooting : MonoBehaviour
     public GameObject tankGun;
     public int damage = 10;
 
-    [SerializeField] public float range = 50f;
+    [SerializeField] public float range = 200f;
 
     private void Start()
     {
@@ -38,6 +38,9 @@ public class TankShooting : MonoBehaviour
         if (Physics.Raycast(rayForward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+            Vector3 heelo = hit.point;
+            targetEffect.transform.position = heelo;
+            targetEffect.Play();
             if (hit.transform.tag == "Enemy")
             {
                 EnemyHealth enemy = hit.transform.gameObject.GetComponent<EnemyHealth>();
@@ -45,9 +48,7 @@ public class TankShooting : MonoBehaviour
                 {
                     enemy.TakeDamage(damage);
                     Debug.Log("the enemy health is " + enemy.currentHealth);
-                    Vector3 heelo = hit.point;
-                    targetEffect.transform.position = heelo;
-                    targetEffect.Play();
+
                 }
             }
 
