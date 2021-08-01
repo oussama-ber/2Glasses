@@ -5071,15 +5071,25 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 139
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Stay Alive\n-Movement: \n-walk: Q,S,D,Z.\n-sprint : W.\n-Fire bullets:
-    spaceButton.\n-Tips: when you kill zombie, 2 respawn in random positions.\nMenu
-    : Escape."
+  m_Text: 'Stay Alive!!
+
+    -Movement: Q,S,D,Z. Sprint: W.
+
+    -Yellow coin gives
+    you sprint power.
+
+    -Fire bullets: LeftMouse.
+
+    -Tips:There are 3 emenies
+    of different levels .
+
+    Menu : Escape.'
 --- !u!222 &1744941722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5465,7 +5475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1859394272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 898163223}
+        m_TargetAssemblyTypeName: EnterMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1859394272
 MonoBehaviour:
   m_ObjectHideFlags: 0

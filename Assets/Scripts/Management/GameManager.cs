@@ -26,10 +26,10 @@ public class GameManager : MonoBehaviour
     // }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            resumeMenu.SetVisible();
-        }
+        // if (Input.GetKey(KeyCode.Escape))
+        // {
+        //     resumeMenu.SetVisible();
+        // }
     }
 
 

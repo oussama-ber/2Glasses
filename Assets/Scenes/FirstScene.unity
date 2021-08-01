@@ -2888,7 +2888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1282784933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1397992233}
+        m_TargetAssemblyTypeName: EnterMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1282784933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4224,12 +4236,12 @@ MonoBehaviour:
     -Yellow coin gives
     you sprint power.
 
-    -Fire bullets: spaceButton.
+    -Fire bullets: LeftMouse.
 
     -Tips:There are 3 emenies
     of different levels .
 
-    Menu : Escape. (working on).'
+    Menu : Escape.'
 --- !u!222 &1744941722
 CanvasRenderer:
   m_ObjectHideFlags: 0
