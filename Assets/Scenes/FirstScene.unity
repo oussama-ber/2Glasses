@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RULES
+  m_Text: TIPS
 --- !u!222 &33883620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476936395
 GameObject:
@@ -3841,6 +3841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaBar: {fileID: 1666113974}
   maxStamina: 100
+  currentStamina: 0
   player: {fileID: 0}
   playerMovement: {fileID: 0}
 --- !u!1001 &1709582195
@@ -3852,7 +3853,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1559909849666760500, guid: 3e2de5cf7ee3fc141a2b3f6a03a6e1fd, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1559909849666760500, guid: 3e2de5cf7ee3fc141a2b3f6a03a6e1fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4135,7 +4136,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RULES
+  m_Text: 'TIPS
+
+'
 --- !u!222 &1743143118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4216,15 +4219,15 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Stay Alive!!
 
-    -Movement: Q,S,D,Z.
+    -Movement: Q,S,D,Z. Sprint: W.
 
-    -Sprint : W. (working on when
-    you take a coins power)
+    -Yellow coin gives
+    you sprint power.
 
     -Fire bullets: spaceButton.
 
-    -Tips:There are
-    3 emenies of different levels .
+    -Tips:There are 3 emenies
+    of different levels .
 
     Menu : Escape. (working on).'
 --- !u!222 &1744941722
@@ -4428,7 +4431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1787334658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4600,7 +4603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1950878115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4989,7 +4992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1559909849666760500, guid: 3e2de5cf7ee3fc141a2b3f6a03a6e1fd, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1559909849666760500, guid: 3e2de5cf7ee3fc141a2b3f6a03a6e1fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5130,7 +5133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2588882416945071011, guid: 468d67f9909379145816a96c316a4777, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2588882416945071011, guid: 468d67f9909379145816a96c316a4777, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5344,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 774596348}
     - target: {fileID: 8177317476432429503, guid: 462ee559a41cfbc46942f89d49ed3d4d, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8177317476432429503, guid: 462ee559a41cfbc46942f89d49ed3d4d, type: 3}
       propertyPath: m_LocalPosition.x

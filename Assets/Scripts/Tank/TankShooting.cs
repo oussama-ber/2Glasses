@@ -21,7 +21,7 @@ public class TankShooting : MonoBehaviour
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
         Debug.DrawRay(origin, directionForward * 200f, Color.red);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             shootEffect.Play();
             Shoot();

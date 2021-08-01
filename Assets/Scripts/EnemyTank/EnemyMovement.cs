@@ -7,19 +7,13 @@ public class EnemyMovement : MonoBehaviour
     public ManualMoveAlong moveAlongScript;
     public GameObject playerLight;
     public GameObject enemyLight;
-
     [SerializeField] float emenyRange = 300f;
     // [SerializeField] float rotationSpeed = 100f;
-
     public float speed;
     public float speedTest = 30;
     // [SerializeField] float SpeedAlong = 3.5f;
-
     Vector3 zeroVector = new Vector3(0, 0, 0);
-
     Vector3 playerPosition = new Vector3(0, 0, 0);
-
-
     public EnemyTankEasy enemyLevel;
     public float floatToAdd;
     public float rotationSpeed = 10f;
@@ -45,7 +39,6 @@ public class EnemyMovement : MonoBehaviour
     {
         DetectingTankWithRaycast();
     }
-
     private void DetectingTankWithRaycast()
     {
         Vector3 directionForward = transform.forward;
@@ -65,17 +58,14 @@ public class EnemyMovement : MonoBehaviour
         RaycastHit hitBack;
         RaycastHit hitRight;
         RaycastHit hitLeft;
-
         bool forwardBool = Physics.Raycast(rayForward, out hitForward, emenyRange);
         bool backBool = Physics.Raycast(rayBack, out hitBack, emenyRange);
         bool rightBool = Physics.Raycast(rayRight, out hitRight, emenyRange);
         bool leftBool = Physics.Raycast(rayLeft, out hitLeft, emenyRange);
-
-
         bool shouldStop = false;
-        // the last position of player
-        //Begin Player detection---------------------------------------------------------------------------------------------
-        //check if the ray detect something update the position of the player (target postion)
+// the last position of player
+//Begin Player detection---------------------------------------------------------------------------------------------
+//check if the ray detect something update the position of the player (target postion)
         if (forwardBool)
         {
             if (hitForward.transform.name == "Tank")
@@ -131,8 +121,7 @@ public class EnemyMovement : MonoBehaviour
                 }
             }
         }
-
-        //End Player detection---------------------------------------------------------------------------------------------
+//End Player detection---------------------------------------------------------------------------------------------
         if (shouldStop)
         {
             // playerPosition = zeroVector;
@@ -148,29 +137,22 @@ public class EnemyMovement : MonoBehaviour
 
             if (!moveAlongScript.enabled)
                 GetComponent<ManualMoveAlong>().enabled = true;
-
             // rechange the player's color if not any more detected. (the fake zombie detect him and reach his stored place)
-
             playerLight.GetComponent<Light>().color = Color.white;
             enemyLight.GetComponent<Light>().color = Color.white;
         }
-        // Debug.Log("player position : " + playerPosition);
-        // Debug.Log("tank position : " + transform.position);
         if (playerPosition == transform.position)
         {
             Debug.Log("bingooooooooooooooooooooooooooooooooooooooooooooooooo");
-
         }
-
         if ((playerPosition != zeroVector)) // works
         {
-            Debug.Log("doingSomething");
+            // Debug.Log("doingSomething");
 
             if (moveAlongScript.enabled)
             {
                 GetComponent<ManualMoveAlong>().enabled = false;
             }
-
             Rotate(rotation);
             // Moveforward();
             Invoke("Moveforward", 1f);
@@ -181,12 +163,12 @@ public class EnemyMovement : MonoBehaviour
     }
     void Rotate(Quaternion rotation)
     {
-        Debug.Log("rotating from method");
+        // Debug.Log("rotating from method");
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
     }
     void Moveforward()
     {
-        Debug.Log("moving from method");
+        // Debug.Log("moving from method");
         // rb.velocity = transform.forward * speedTest;
         transform.position = Vector3.Lerp(transform.position, playerPosition, Time.deltaTime * speedTest);
         

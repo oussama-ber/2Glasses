@@ -29,21 +29,18 @@ public class EnemyShooting : MonoBehaviour
         ammo = enemyLevel.ammo;
         damage = enemyLevel.damage;
         fireRate = enemyLevel.fireRate;
-        
-
     }
+    
     void Update()
     {
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;
         Debug.DrawRay(origin, directionForward * 50f, Color.red);
         Search();
-
-
     }
+
     public bool Search()
     {
-
         //get position and direction of the gun.
         Vector3 origin = tankGun.transform.position;
         Vector3 directionForward = tankGun.transform.forward;

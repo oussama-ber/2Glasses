@@ -6,7 +6,6 @@ public class ManualReloading : MonoBehaviour
 {
     // just testing.
     public GameObject reloadSpawner;
-
     public GameObject reloadStation;
     public Vector3 directionPlayer;
     public float rotationSpeed = 2f;

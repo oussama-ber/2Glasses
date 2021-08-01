@@ -8,50 +8,59 @@ public class StaminaBar : MonoBehaviour
 {
     public Slider staminaBar;
     public int maxStamina = 100;
-    private float currentStamina;
+    public float currentStamina;
 
     private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
     private Coroutine regen;
 
     public static StaminaBar instance;
     public GameObject player;
-    public Player1Movement playerMovement ;
-   
+    public TankController playerMovement ;
+
 
     private void Awake()
     {
         instance = this;
-         playerMovement = player.GetComponent<Player1Movement>();
+        playerMovement = player.GetComponent<TankController>();
     }
     void Start()
     {
+        Debug.Log("shieeeeeeeeet");
         currentStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
-        
+
     }
 
     void Update()
     {
-        if(currentStamina > 20 )
+        // Debug.Log("the currentStamina "+currentStamina);
+        if (currentStamina > 1)
         {
-            
+
             if (Input.GetKey(KeyCode.W))
             {
-                UseStamina(0.020f);
-                
+                // Debug.Log("sprintinn");
+                UseStamina(0.050f);
+
             }
-            if(playerMovement != null)
+            if (playerMovement != null)
             {
-            playerMovement.sprintSpeed = 20f;
-            playerMovement.walkSpeed = 15f;
+                playerMovement.sprintMovement = 30f;
+                playerMovement.movementSpeed = 17f;
             }
-        }else if (currentStamina <= 20)
+        }
+        else if (currentStamina <= 1)
         {
-            if(playerMovement != null)
+            if (playerMovement != null)
             {
-            playerMovement.sprintSpeed = 15f;
-            playerMovement.walkSpeed= 15f; 
+                // Debug.Log("reset everything");
+                playerMovement.sprintMovement = 17f;
+                playerMovement.movementSpeed = 17f;
+                currentStamina = 100f;
+                Debug.Log("you can go for anotherone");
+                gameObject.SetActive(false);
+                // Destroy(gameObject);
             }
         }
     }
@@ -61,26 +70,26 @@ public class StaminaBar : MonoBehaviour
         {
             currentStamina -= amout;
             staminaBar.value = currentStamina;
-            if (regen != null)
-            {
-                StopCoroutine(regen);
-            }
-            regen = StartCoroutine(RegenStamina());
+            // if (regen != null)
+            // {
+            //     StopCoroutine(regen);
+            // }
+            // regen = StartCoroutine(RegenStamina());
         }
     }
-    private IEnumerator RegenStamina()
+    public IEnumerator RegenStamina()
     {
         yield return new WaitForSeconds(1);
 
         while (currentStamina < maxStamina)
         {
-            currentStamina += (maxStamina / 100) *3;
+            currentStamina += (maxStamina / 100) * 3;
             staminaBar.value = currentStamina;
             yield return regenTick;
         }
     }
-    void Invisible()
+   public void Invisible()
     {
-        gameObject.SetActive(false) ;
+        gameObject.SetActive(false);
     }
 }

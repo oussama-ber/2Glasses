@@ -30,7 +30,7 @@ public class ManualMoveAlong : MonoBehaviour
         // transform.position += movementSpeed * Time.deltaTime * transform.forward;
 
         rb.velocity = transform.forward * movementSpeed;
-        Debug.Log("moving");
+        // Debug.Log("moving");
         // transform.position = Vector3.Lerp(transform.position, Vector3.forward, movementSpeed);
 
 
@@ -105,7 +105,7 @@ public class ManualMoveAlong : MonoBehaviour
             }
             if (raycastOffset != Vector3.zero)
             {
-                Debug.Log("rotating");
+                // Debug.Log("rotating");
                 // transform.rotation =
                 // transform.Rotate(raycastOffset * Time.deltaTime * 5f);
                 // floatToAdd += 1f;

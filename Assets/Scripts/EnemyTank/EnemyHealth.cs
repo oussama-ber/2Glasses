@@ -7,26 +7,18 @@ public class EnemyHealth : MonoBehaviour
     public HealthBar healthBar;
     public int health = 100;
     public int currentHealth = 100;
-
-
-
     void OnEnable()
     {
          currentHealth = 100;
-        // Debug.Log("the enemy health is from EnemyHealth" +currentHealth);
     }
-
     public void TakeDamage(int  damage)
     {
-        // to do if the health <= 50 decrease the power of his gun
-
         currentHealth -= damage;
         Debug.Log(currentHealth);
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
             EnemyDie();
-
         }
     }
     void EnemyDie()
@@ -36,5 +28,4 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("the current score is : " + Score.currentScore);
         Destroy(gameObject);
     }
-
 }

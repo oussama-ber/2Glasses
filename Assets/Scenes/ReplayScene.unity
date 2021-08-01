@@ -187,15 +187,25 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 139
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Stay Alive\n-Movement: \n-walk: Q,S,D,Z.\n-sprint : W.\n-Fire bullets:
-    spaceButton.\n-Tips: when you kill zombie, 2 respawn in random positions.\nMenu
-    : Escape."
+  m_Text: 'Stay Alive!!
+
+    -Movement: Q,S,D,Z. Sprint: W.
+
+    -Yellow coin gives
+    you sprint power.
+
+    -Fire bullets: spaceButton.
+
+    -Tips:There are 3 emenies
+    of different levels .
+
+    Menu : Escape. (working on).'
 --- !u!222 &33677984
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4655,6 +4665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaBar: {fileID: 1666113974}
   maxStamina: 100
+  currentStamina: 0
   player: {fileID: 0}
   playerMovement: {fileID: 0}
 --- !u!1001 &1709582195
@@ -5270,7 +5281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1787334658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5363,7 +5374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RULES
+  m_Text: TIPS
 --- !u!222 &1805426187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6092,7 +6103,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RULES
+  m_Text: TIPS
 --- !u!222 &2090804737
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -45,6 +45,7 @@
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Scripts\UIs\BarFixedRotation.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+     <Compile Include="Assets\Scripts\CoinType.cs" />
      <Compile Include="Assets\Scripts\EnemyTank\EnemyMoveAlong.cs" />
      <Compile Include="Assets\Scripts\EnemyTank\EnemyRunRotation.cs" />
      <Compile Include="Assets\Scripts\UIs\StaminaBar.cs" />
@@ -65,7 +66,9 @@
      <Compile Include="Assets\Scripts\Management\PlayerManager.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scripts\Zombie\MoveTransformPositionWithInputSmoothlyAndRotation.cs" />
+     <Compile Include="Assets\ManualMoveAlong.cs" />
      <Compile Include="Assets\Scripts\Coin\Coin.cs" />
+     <Compile Include="Assets\CoinSpawner.cs" />
      <Compile Include="Assets\EnterMenu.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -115,7 +118,7 @@
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Scripts\BluePlayer\Health.cs" />
      <Compile Include="Assets\Packs\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\ManualMoveAlong.cs" />
+     <Compile Include="Assets\Spawning.cs" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Packs\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

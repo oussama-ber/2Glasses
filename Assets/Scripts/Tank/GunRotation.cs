@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// [RequireComponent(typeof(LineRenderer))]
 public class GunRotation : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public float _rotationSpeed = 3f;
     [SerializeField] public float _turnSpeed = 0.9f;
-  
+
+    // public int reflections;
+    // public float maxLength;
+
+    // private LineRenderer lineRenderer;
+    // private Ray ray;
+    // private RaycastHit hit;
+    // private Vector3 direction;
+    
+     void Awake() {
+        // lineRenderer = GetComponent<LineRenderer>();
+    }
     void Start()
     {
 
@@ -17,6 +29,7 @@ public class GunRotation : MonoBehaviour
     void Update()
     {
         RotationProcess();
+        // DisplayAimRay();
 
     }
 
@@ -46,4 +59,10 @@ public class GunRotation : MonoBehaviour
         transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed);
         // transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.up);
     }
+    // public void DisplayAimRay()
+    // {
+    //     ray = new Ray (transform.position, transform.forward);
+    //     lineRenderer.positionCount = 1;
+    //     lineRenderer.SetPosition(0, ray.origin +ray.direction * maxLength);
+    // }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    [SerializeField] public float movementSpeed = 10f;
-    [SerializeField] public float sprintMovement = 15f;
+    [SerializeField] public float movementSpeed = 17f;
+    [SerializeField] public float sprintMovement ;
     [SerializeField] public float backSpeed = 5f;
     [SerializeField] public float rotationSpeed = 3f;
 
@@ -23,6 +23,7 @@ public class TankController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         quaternionToVector = startQuaternion.eulerAngles;
+        sprintMovement = 0;
     }
 
     // Update is called once per frame
@@ -46,16 +47,23 @@ public class TankController : MonoBehaviour
             // transform.position += Time.deltaTime * backSpeed * -transform.forward;
             rb.velocity = -transform.forward * movementSpeed;
         }
-        // else if (Input.GetKey(KeyCode.W))
-        // {
-        //     transform.position += Time.deltaTime * sprintMovement * transform.forward;
-        // }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            // Debug.Log("sprinting with speed of : " + sprintMovement );
+            Sprint(sprintMovement);
+        }
         else
         {   rb.velocity = new Vector3(0,0,0);
             bodyLight.enabled = false;
             topLight.enabled = false;
         }
     }
+
+     void Sprint(float sprintMovement)
+    {
+        transform.position += Time.deltaTime * sprintMovement * transform.forward;
+    }
+
     void RotationProcess()
     {
         if (Input.GetKey(KeyCode.D))
