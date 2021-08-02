@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManualMoveAlong : MonoBehaviour
 {
     public float emenyRange = 200f;
-    public float movementSpeed = 5f;
+    public float movementSpeed = 20f;
     public float floatToAdd = 0;
     public float rotationSpeed = 6f;
     Rigidbody rb;
@@ -119,11 +119,13 @@ public class ManualMoveAlong : MonoBehaviour
         Quaternion currentRotation = transform.rotation;
         Quaternion wantedRotation = Quaternion.Euler(0, floatToAdd, 0);
         transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed);
+        // transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation,  rotationSpeed);
     }
     void CriticalRotation()
     {
+        Debug.Log("critical angle rotation by 180");
         Quaternion currentRotation = transform.rotation;
         Quaternion wantedRotation = Quaternion.Euler(0, 180, 0);
-        transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation,  rotationSpeed);
     }
 }

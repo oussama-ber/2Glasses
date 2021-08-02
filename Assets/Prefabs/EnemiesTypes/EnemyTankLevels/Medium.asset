@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a41254ba887514d81ed3ce9d26720c, type: 3}
   m_Name: Medium
   m_EditorClassIdentifier: 
-  ammo: 10
+  ammo: 5
   fireRate: 1
   damage: 15
   speed: 10

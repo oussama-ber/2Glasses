@@ -164,7 +164,9 @@ public class EnemyMovement : MonoBehaviour
     void Rotate(Quaternion rotation)
     {
         // Debug.Log("rotating from method");
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+        // transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+        
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation,  rotationSpeed);
     }
     void Moveforward()
     {

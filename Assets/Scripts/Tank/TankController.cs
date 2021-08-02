@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
     [SerializeField] public float movementSpeed = 17f;
-    [SerializeField] public float sprintMovement ;
+    [SerializeField] public float sprintMovement;
     [SerializeField] public float backSpeed = 5f;
     [SerializeField] public float rotationSpeed = 3f;
 
@@ -53,15 +53,16 @@ public class TankController : MonoBehaviour
             Sprint(sprintMovement);
         }
         else
-        {   rb.velocity = new Vector3(0,0,0);
+        {
+            rb.velocity = new Vector3(0, 0, 0);
             bodyLight.enabled = false;
             topLight.enabled = false;
         }
     }
 
-     void Sprint(float sprintMovement)
+    void Sprint(float sprintMovement)
     {
-        transform.position += Time.deltaTime * sprintMovement * transform.forward;
+        transform.position +=  sprintMovement * transform.forward;
     }
 
     void RotationProcess()
@@ -71,26 +72,28 @@ public class TankController : MonoBehaviour
             Quaternion currentRotation = transform.rotation;
             floatToAdd += 1f;
             Quaternion wantedRotation = Quaternion.Euler(0, floatToAdd, 0);
-            
-            transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed); 
+
+            transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation,  rotationSpeed);
             //we dont need to move the gun of the tank to the other angle.
             // gunRotation.RotateRight(rotationSpeed, floatToAdd);
 
-           
+
         }
         else if (Input.GetKey(KeyCode.Q))
         {
             Quaternion currentRotation = transform.rotation;
             floatToAdd -= 1f;
             Quaternion wantedRotation = Quaternion.Euler(0, floatToAdd, 0);
-            transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation, Time.deltaTime * rotationSpeed); 
+            transform.rotation = Quaternion.Lerp(currentRotation, wantedRotation,  rotationSpeed);
             // transform.Rotate(Time.deltaTime * rotationSpeed * Vector3.down);
             //  we dont need to move the gun of the tank to the other angle.
             // gunRotation.RotateLeft(rotationSpeed, floatToAdd);
         }
-        else 
-        {
-            //  transform.rotation = ;
-        }
+        // else
+        // {
+        //     // Debug.Log("stop rotation");
+        //     Quaternion currentRotation = transform.rotation;
+        //     transform.rotation = currentRotation;
+        // }
     }
 }

@@ -40,7 +40,7 @@ public class ManualReloading : MonoBehaviour
     {
         directionPlayer = reloadStation.transform.position - transform.position;
         rotation = Quaternion.LookRotation(directionPlayer);
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed );
     }
     void Move()
     {
@@ -93,8 +93,8 @@ public class ManualReloading : MonoBehaviour
         }
         if (raycastOffset != Vector3.zero)
         {
-            Debug.Log("rotating");
-            transform.Rotate(raycastOffset * Time.deltaTime * 5f);
+            // Debug.Log("rotating");
+            transform.Rotate(raycastOffset * 5f);
         }
         else
         {
@@ -105,7 +105,7 @@ public class ManualReloading : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if ((other.gameObject.tag == "ReloadStation") && !isLoaded)
+        if ((other.gameObject.transform.name == "ReloadStation") && !isLoaded)
         {
 
             // Destroy(reloadStation);
@@ -121,6 +121,7 @@ public class ManualReloading : MonoBehaviour
             GetComponent<EnemyMovement>().enabled = true;
             GetComponent<EnemyShooting>().enabled = true;
             GetComponent<ManualMoveAlong>().enabled = true;
+            GetComponent<EnemyHealth>().enabled = true;
             GetComponent<ManualReloading>().enabled = false;
         }
     }
