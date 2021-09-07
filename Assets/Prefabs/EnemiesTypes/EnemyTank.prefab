@@ -438,7 +438,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6041,7 +6041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8177317476432429503
 Transform:
   m_ObjectHideFlags: 0
@@ -6085,7 +6085,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 3
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -6098,7 +6098,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa3f6ee224fae3c4f83ba46625a28e0a, type: 3}
   m_Name: 
@@ -6119,7 +6119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88842a34a32f624498b62d1a06fed7e3, type: 3}
   m_Name: 
@@ -6134,7 +6134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab3210764fa8f84493571610b6bd228, type: 3}
   m_Name: 
@@ -6157,7 +6157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dbe8b0477581254896549487edec415, type: 3}
   m_Name: 
@@ -6169,7 +6169,7 @@ MonoBehaviour:
   emenyRange: 200
   movementSpeed: 25
   reloadingParticules: {fileID: 8338985414675580050}
-  isLoaded: 1
+  isLoaded: 0
   enemyTankLevel: {fileID: 11400000, guid: 9818a22b1f2f9f148a76f5e248ef1254, type: 2}
   ammoToReload: 0
 --- !u!114 &1382415023
@@ -6179,13 +6179,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177317476432429501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33c3d08b0f19ba84eae853c26929d293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   emenyRange: 200
-  movementSpeed: 12
+  movementSpeed: 17
   floatToAdd: 0
   rotationSpeed: 6.84
 --- !u!1 &8177317476619559526

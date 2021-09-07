@@ -62,7 +62,8 @@ public class TankController : MonoBehaviour
 
     void Sprint(float sprintMovement)
     {
-        transform.position +=  sprintMovement * transform.forward;
+        /*transform.position +=  sprintMovement * transform.forward;*/
+        rb.velocity = transform.forward * sprintMovement;
     }
 
     void RotationProcess()
