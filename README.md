@@ -22,13 +22,13 @@ This is a Real-time Tank RPG game. player vs enemies(with different levels)
 ### There are 3 Scenes
 
 #### First Scene.
-	![First Scene](/Images/FirstScene.PNG)
+	![First Scene](https://github.com/oussama-ber/2Glasses/tree/main/Images/FirstScene.PNG)
 ---
 #### Main Scene. 
-	![Main Scene](/Images/GamePlay.PNG)
+	![Main Scene](https://github.com/oussama-ber/2Glasses/tree/main/Images/GamePlay.PNG)
 ---
 #### Last scene.
-	![Main Scene](/Images/GamePlay.PNG)
+	![Main Scene](https://github.com/oussama-ber/2Glasses/tree/main/Images/GamePlay.PNG)
 ---
 ## INSTALLATION
 	*no installation required.
